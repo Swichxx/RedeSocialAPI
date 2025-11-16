@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/usuarios")
+@CrossOrigin("*")
 public class UsuarioController {
 
     private final UsuarioRepository usuarioRepository;
@@ -32,6 +33,12 @@ public class UsuarioController {
     @PostMapping("/post")
     public Usuario save(@RequestBody Usuario usuario) {
         return usuarioRepository.save(usuario);
+    }
+
+    //Buscar por nome
+    @GetMapping
+    public List<Usuario> buscar(@RequestParam(required = false) String nome) {
+            return usuarioRepository.findByNome(nome);
     }
 
 }
