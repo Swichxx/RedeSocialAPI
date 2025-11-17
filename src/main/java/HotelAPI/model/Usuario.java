@@ -31,14 +31,15 @@ public class Usuario {
 
     @Column(name = "foto")
     private String foto;
-    @Column(name = "bio")
-    private String bio;         // descrição do usuário
 
-    @Column(columnDefinition = "TEXT")
-    private String interesses;  // lista de interesses ou JSON
+    @Column(name = "bio")
+    private String bio;
+
+    @Column(columnDefinition = "TEXT", name = "interesses")
+    private String interesses;
 
     @Column(name = "privacidade")
-    private String privacidade; // público, privado, amigos etc.
+    private String privacidade;
 
 
 }

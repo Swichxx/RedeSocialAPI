@@ -41,4 +41,16 @@ public class UsuarioController {
             return usuarioRepository.findByNome(nome);
     }
 
+    //Deletar Usuario por id
+    @DeleteMapping("/dell{id}")
+    public void delete(@PathVariable int id) {
+        usuarioRepository.deleteById(id);
+    }
+
+    @PutMapping("/alter{id}")
+    public Usuario update(@RequestBody Usuario usuario, @PathVariable int id) {
+        return usuarioRepository.save(usuario);
+    }
+
+
 }

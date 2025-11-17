@@ -41,4 +41,11 @@ public class StoriesController {
         storiesRepository.deleteById(id);
     }
 
+    //Put por id
+    @PutMapping("/alter{id}")
+    public Stories updateStories(@RequestBody Stories stories, @PathVariable int id) {
+        return storiesRepository.save(stories);
+    }
+
+
 }

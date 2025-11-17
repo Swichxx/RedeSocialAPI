@@ -1,6 +1,7 @@
 package HotelAPI.controller;
 
 import HotelAPI.model.Postagem;
+import HotelAPI.model.Usuario;
 import HotelAPI.repository.PostagemRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +39,12 @@ public class PostagemController {
     @DeleteMapping("delete{id}")
     public void deleteById(@PathVariable int id) {
         postagemRepository.deleteById(id);
+    }
+
+    //Put por id
+    @PutMapping("/alter{id}")
+    public Postagem update(@RequestBody Postagem postagem, @PathVariable int id) {
+        return postagemRepository.save(postagem);
     }
 
 

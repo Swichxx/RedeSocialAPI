@@ -45,6 +45,12 @@ public class CurtidaController {
     }
 
 
+    //Put por id
+
+    @PutMapping("/alter{id}")
+    public Curtida update(@RequestBody Curtida curtida, @PathVariable int id) {
+        return curtidaRepository.save(curtida);
+    }
 
 }
 
