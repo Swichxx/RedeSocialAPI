@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/posts")
+@CrossOrigin("*")
 public class PostagemController {
 
     private final PostagemRepository postagemRepository;

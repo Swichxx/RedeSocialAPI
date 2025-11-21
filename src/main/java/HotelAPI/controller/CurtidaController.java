@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("curtida")
+@CrossOrigin("*")
 public class CurtidaController {
 
     private CurtidaRepository curtidaRepository;
